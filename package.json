@@ -1,5 +1,5 @@
 {
-	"name": "obsidian-transfer-latex-from-gpt",
+	"name": "transfer-latex-from-gpt",
 	"version": "1.0.0",
 	"description": "Demonstrates some of the capabilities of the Obsidian API.",
 	"main": "main.js",
