@@ -5,5 +5,5 @@
 - 2. 或者下载[插件包](https://github.com/xixia123/obsidian-transfer-latex-from-gpt)并手动安装。
 ### 3.Usage
 - 1. 通过命令使用  
-![](./media/Command line.gif)
+![](https://github.com/xixia123/obsidian-transfer-latex-from-gpt/blob/master/media/Command%20line.gif)
 - 2. 通过点击左侧按钮使用
