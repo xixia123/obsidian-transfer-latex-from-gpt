@@ -7,3 +7,4 @@
 - 1. 通过命令使用  
 ![](https://github.com/xixia123/obsidian-transfer-latex-from-gpt/blob/master/media/Command%20line.gif)
 - 2. 通过点击左侧按钮使用
+![](https://github.com/xixia123/obsidian-transfer-latex-from-gpt/blob/master/media/Click%20button.gif)
