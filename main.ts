@@ -8,25 +8,21 @@ export default class TransferLatexFromGPTPlugin extends Plugin {
         this.addCommand({
             id: 'convert-latex-to-mathjax',
             name: 'Convert LaTeX to MathJax',
-            callback: () => this.convertLatexToMathJax()
+            callback: () => {
+                const activeFile = this.app.workspace.getActiveFile();
+                if (activeFile) {
+                    this.convertLatexToMathJax();
+                }
+            }
         });
 
         // 在菜单栏添加图标，点击时触发相同的转换功能
-        const ribbonIconEl = this.addRibbonIcon('sigma', 'Convert LaTeX to MathJax', () => this.convertLatexToMathJax());
-
-        // 确认图标已经添加
-        if (ribbonIconEl) {
-            console.log('Ribbon icon added successfully.');
-
-            // 将图标移至菜单栏的最后面
-            const ribbonContainer = document.querySelector('.workspace-ribbon');
-            if (ribbonContainer) {
-                ribbonContainer.appendChild(ribbonIconEl); // 将图标插入到菜单栏最后面
-                console.log('Ribbon icon moved to the end.');
+        this.addRibbonIcon('sigma', 'Convert LaTeX to MathJax', () => {
+            const activeFile = this.app.workspace.getActiveFile();
+            if (activeFile) {
+                this.convertLatexToMathJax();
             }
-        } else {
-            console.log('Failed to add ribbon icon.');
-        }
+        });
     }
 
     // 卸载插件时的清理
@@ -39,7 +35,6 @@ export default class TransferLatexFromGPTPlugin extends Plugin {
         const activeFile = this.app.workspace.getActiveFile();
 
         if (!activeFile) {
-            console.log("No active file");
             return;
         }
 
