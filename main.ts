@@ -8,6 +8,7 @@ export default class TransferLatexFromGPTPlugin extends Plugin {
         this.addCommand({
             id: 'convert-latex-to-mathjax',
             name: 'Convert LaTeX to MathJax',
+			icon: 'sigma',
             callback: () => {
                 const activeFile = this.app.workspace.getActiveFile();
                 if (activeFile) {
